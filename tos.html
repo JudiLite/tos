@@ -1,407 +1,1645 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BeckyNetwork 服務條款</title>
-  <style>
-    :root {
-      --bg: #080d1c;
-      --card: rgba(255, 255, 255, 0.075);
-      --card-strong: rgba(255, 255, 255, 0.11);
-      --text: #eef4ff;
-      --muted: #aab7d6;
-      --line: rgba(255, 255, 255, 0.12);
-      --primary: #7aa8ff;
-      --secondary: #6ee7b7;
-      --danger: #fb7185;
-      --warning: #fbbf24;
-      --shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Ueolynetwork 服務條款 · Terms of Service</title>
+<meta name="description" content="Ueolynetwork 服務條款：帳戶與訂閱、流量使用、禁止行為、付款與退款、隱私與資料保護、風險聲明與條款變更說明。" />
+<meta name="theme-color" content="#05070e" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ueolynetwork 服務條款" />
+<meta property="og:description" content="在使用 Ueolynetwork 服務前，請仔細閱讀以下條款。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<style>
+/* ==========================================================================
+   Ueolynetwork — Terms of Service
+   Design system: "Aurora Glass" (dark-first, glassmorphism + aurora light)
+   ========================================================================== */
 
-    * {
-      box-sizing: border-box;
-    }
+/* ---------- 1. Tokens ---------- */
+:root {
+  color-scheme: dark;
 
-    html {
-      scroll-behavior: smooth;
-    }
+  /* surface */
+  --bg: #05070e;
+  --bg-glow-1: rgba(124, 156, 255, 0.20);
+  --bg-glow-2: rgba(167, 139, 250, 0.16);
+  --bg-glow-3: rgba(94, 234, 212, 0.11);
+  --panel: rgba(255, 255, 255, 0.042);
+  --panel-2: rgba(255, 255, 255, 0.072);
+  --panel-3: rgba(255, 255, 255, 0.11);
+  --line: rgba(255, 255, 255, 0.085);
+  --line-2: rgba(255, 255, 255, 0.16);
+  --line-3: rgba(255, 255, 255, 0.28);
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 18% 8%, rgba(122, 168, 255, 0.22), transparent 30%),
-        radial-gradient(circle at 88% 20%, rgba(110, 231, 183, 0.14), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(251, 113, 133, 0.10), transparent 34%),
-        var(--bg);
-      line-height: 1.75;
-    }
+  /* type */
+  --text: #e9eefb;
+  --text-2: #c3cfe7;
+  --muted: #8f9dba;
+  --faint: #6b7996;
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 75%);
-    }
+  /* accents */
+  --accent: #8ba6ff;
+  --accent-2: #a78bfa;
+  --accent-3: #5eead4;
+  --danger: #fb7185;
+  --warn: #fbbf24;
+  --ok: #34d399;
 
-    .page {
-      width: min(1080px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 56px 0 72px;
-      position: relative;
-      z-index: 1;
-    }
+  --grad: linear-gradient(112deg, #a9c2ff 0%, #b9a4fb 44%, #6ff0dc 100%);
+  --grad-solid: linear-gradient(140deg, #7c9cff, #a78bfa 60%, #5eead4);
 
-    .hero {
-      padding: 42px 28px;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.045));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      text-align: center;
-      overflow: hidden;
-      position: relative;
-    }
+  /* shape & depth */
+  --r-xl: 28px;
+  --r-lg: 22px;
+  --r-md: 16px;
+  --r-sm: 12px;
+  --r-pill: 999px;
+  --shadow-lg: 0 34px 90px -28px rgba(2, 6, 23, 0.9);
+  --shadow-md: 0 18px 46px -22px rgba(2, 6, 23, 0.8);
+  --shadow-glow: 0 0 0 1px var(--line), 0 24px 60px -30px rgba(124, 156, 255, 0.55);
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      right: -80px;
-      top: -90px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(122,168,255,.24), transparent 68%);
-    }
+  /* rhythm */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      margin-bottom: 18px;
-      border: 1px solid rgba(122, 168, 255, 0.28);
-      border-radius: 999px;
-      color: #dbe8ff;
-      background: rgba(122, 168, 255, 0.10);
-      font-size: 14px;
-      font-weight: 700;
-    }
+  --header-h: 68px;
+  --ring: rgba(139, 166, 255, 0.62);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-sans: "Inter", "Inter Variable", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC",
+    "Microsoft JhengHei", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+}
 
-    h1 {
-      margin: 0;
-      font-size: clamp(34px, 6vw, 62px);
-      line-height: 1.08;
-      letter-spacing: -1.4px;
-    }
+[data-theme="light"] {
+  color-scheme: light;
 
-    .subtitle {
-      margin: 18px auto 0;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 16px;
-    }
+  --bg: #f2f5fb;
+  --bg-glow-1: rgba(99, 132, 255, 0.20);
+  --bg-glow-2: rgba(160, 132, 250, 0.16);
+  --bg-glow-3: rgba(45, 212, 191, 0.14);
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-2: rgba(255, 255, 255, 0.9);
+  --panel-3: rgba(255, 255, 255, 1);
+  --line: rgba(15, 23, 42, 0.09);
+  --line-2: rgba(15, 23, 42, 0.16);
+  --line-3: rgba(15, 23, 42, 0.3);
 
-    .meta {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
+  --text: #0c1425;
+  --text-2: #26334d;
+  --muted: #55637d;
+  --faint: #6f7c94;
 
-    .pill {
-      padding: 9px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.055);
-      color: #dce7ff;
-      font-size: 14px;
-    }
+  --accent: #3f5fd6;
+  --accent-2: #7c4fe0;
+  --accent-3: #0d9488;
+  --danger: #d92b47;
+  --warn: #a35c07;
+  --ok: #0f8f63;
 
-    .layout {
-      display: grid;
-      grid-template-columns: 270px 1fr;
-      gap: 24px;
-      margin-top: 28px;
-      align-items: start;
-    }
+  --grad: linear-gradient(112deg, #2f56cf 0%, #6b3fd4 48%, #0b8f84 100%);
+  --grad-solid: linear-gradient(140deg, #4f6fe8, #7c5cea 60%, #14b8a6);
 
-    .toc {
-      position: sticky;
-      top: 18px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255,255,255,0.065);
-      backdrop-filter: blur(14px);
-    }
+  --shadow-lg: 0 30px 70px -34px rgba(15, 23, 42, 0.34);
+  --shadow-md: 0 16px 40px -24px rgba(15, 23, 42, 0.3);
+  --shadow-glow: 0 0 0 1px var(--line), 0 22px 50px -32px rgba(63, 95, 214, 0.45);
+  --ring: rgba(63, 95, 214, 0.55);
+}
 
-    .toc-title {
-      margin: 0 0 12px;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 800;
-    }
+/* ---------- 2. Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-    .toc a {
-      display: block;
-      padding: 9px 10px;
-      border-radius: 12px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 14px;
-      transition: .2s ease;
-    }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
 
-    .toc a:hover {
-      color: #fff;
-      background: rgba(122,168,255,0.12);
-    }
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.78;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
 
-    .content {
-      display: grid;
-      gap: 18px;
-    }
+img, svg { display: block; }
+a { color: inherit; }
 
-    .section {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      background: var(--card);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
-      backdrop-filter: blur(14px);
-    }
+::selection {
+  background: color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--text);
+}
 
-    .section h2 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 14px;
-      font-size: 22px;
-      line-height: 1.35;
-      color: #fff;
-    }
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
 
-    .section p {
-      margin: 0 0 12px;
-      color: #dce6fb;
-    }
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
-    .section p:last-child {
-      margin-bottom: 0;
-    }
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -160%);
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  background: var(--panel-3);
+  border: 1px solid var(--line-2);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s var(--ease);
+}
+.skip-link:focus-visible { transform: translate(-50%, 0); }
 
-    ul {
-      margin: 0;
-      padding-left: 20px;
-      color: #dce6fb;
-    }
+/* ---------- 3. Ambient background ---------- */
+.aura {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%);
+}
 
-    li {
-      margin: 8px 0;
-    }
+.aura::before,
+.aura::after,
+.aura span {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  will-change: transform;
+}
 
-    strong {
-      color: #fff;
-    }
+.aura::before {
+  width: 46vw;
+  height: 46vw;
+  min-width: 380px;
+  min-height: 380px;
+  top: -14vw;
+  left: -8vw;
+  background: radial-gradient(circle at 30% 30%, var(--bg-glow-1), transparent 68%);
+  animation: drift-a 26s var(--ease) infinite alternate;
+}
 
-    .notice {
-      border-color: rgba(251, 191, 36, 0.32);
-      background: linear-gradient(145deg, rgba(251,191,36,0.12), rgba(255,255,255,0.055));
-    }
+.aura::after {
+  width: 40vw;
+  height: 40vw;
+  min-width: 340px;
+  min-height: 340px;
+  top: 12vw;
+  right: -10vw;
+  background: radial-gradient(circle at 60% 40%, var(--bg-glow-2), transparent 68%);
+  animation: drift-b 32s var(--ease) infinite alternate;
+}
 
-    .danger {
-      border-color: rgba(251, 113, 133, 0.32);
-      background: linear-gradient(145deg, rgba(251,113,133,0.12), rgba(255,255,255,0.055));
-    }
+.aura span {
+  width: 34vw;
+  height: 34vw;
+  min-width: 300px;
+  min-height: 300px;
+  bottom: -16vw;
+  left: 42%;
+  background: radial-gradient(circle at 50% 50%, var(--bg-glow-3), transparent 70%);
+  animation: drift-c 38s var(--ease) infinite alternate;
+}
 
-    .highlight {
-      color: var(--secondary);
-      font-weight: 800;
-    }
+@keyframes drift-a {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(6vw, 5vh, 0) scale(1.12); }
+}
+@keyframes drift-b {
+  from { transform: translate3d(0, 0, 0) scale(1.05); }
+  to   { transform: translate3d(-7vw, 7vh, 0) scale(0.95); }
+}
+@keyframes drift-c {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-5vw, -6vh, 0) scale(1.15); }
+}
 
-    .highlight a {
-      color: var(--secondary);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(110, 231, 183, 0.45);
-    }
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.5'/></svg>");
+}
 
-    .highlight a:hover {
-      color: #ffffff;
-      border-bottom-color: #ffffff;
-    }
+.grid-lines {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.42;
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(120% 80% at 50% 0%, #000 0%, transparent 72%);
+}
 
-    .footer {
-      margin-top: 28px;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      background: rgba(255,255,255,0.045);
-      text-align: center;
-      color: var(--muted);
-    }
+/* ---------- 4. Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid transparent;
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
 
-    .footer b {
-      display: block;
-      color: #fff;
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
+.site-header.is-stuck {
+  border-bottom-color: var(--line);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  box-shadow: 0 12px 40px -28px rgba(0, 0, 0, 0.9);
+}
 
-    @media (max-width: 860px) {
-      .page {
-        width: min(100% - 24px, 720px);
-        padding-top: 24px;
-      }
+.header-inner {
+  width: min(1240px, 100% - 40px);
+  margin-inline: auto;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
 
-      .hero {
-        padding: 34px 20px;
-        border-radius: 26px;
-      }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--text);
+  flex: 0 0 auto;
+}
 
-      .layout {
-        grid-template-columns: 1fr;
-      }
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--grad-solid);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 22px -10px color-mix(in srgb, var(--accent) 80%, transparent);
+}
+.brand-mark svg { width: 20px; height: 20px; stroke: #fff; }
 
-      .toc {
-        position: static;
-      }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.brand-sub {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 600;
+}
 
-      .toc a {
-        display: inline-block;
-        margin: 3px;
-      }
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
 
-      .section {
-        padding: 20px;
-        border-radius: 22px;
-      }
-    }
-  </style>
+.header-nav a {
+  padding: 8px 13px;
+  border-radius: var(--r-pill);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.header-nav a:hover { color: var(--text); background: var(--panel-2); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.header-nav + .header-actions { margin-left: 6px; }
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.12s;
+}
+.icon-btn:hover { color: var(--text); border-color: var(--line-2); background: var(--panel-2); }
+.icon-btn:active { transform: scale(0.95); }
+.icon-btn svg { width: 18px; height: 18px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 18px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.14s var(--ease), box-shadow 0.24s, filter 0.24s;
+  white-space: nowrap;
+}
+.btn svg { width: 16px; height: 16px; }
+
+.btn-primary {
+  color: #06090f;
+  background: var(--grad-solid);
+  box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--accent) 90%, transparent);
+}
+.btn-primary:hover { filter: brightness(1.06); box-shadow: 0 14px 36px -14px color-mix(in srgb, var(--accent) 95%, transparent); }
+.btn-primary:active { transform: scale(0.975); }
+
+.btn-ghost {
+  color: var(--text);
+  border-color: var(--line-2);
+  background: var(--panel);
+}
+.btn-ghost:hover { background: var(--panel-2); border-color: var(--line-3); }
+
+/* progress bar */
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--p, 0));
+  background: var(--grad-solid);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.site-header.is-stuck .progress { opacity: 1; }
+
+/* ---------- 5. Page shell ---------- */
+.page {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, 100% - 40px);
+  margin-inline: auto;
+  padding: clamp(28px, 5vw, 64px) 0 clamp(64px, 8vw, 104px);
+}
+
+/* ---------- 6. Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(120% 130% at 50% -20%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 62%),
+    linear-gradient(165deg, var(--panel-2), var(--panel));
+  box-shadow: var(--shadow-lg);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(22px) saturate(150%);
+  padding: clamp(30px, 4.6vw, 58px) clamp(22px, 4vw, 56px) clamp(26px, 3.8vw, 42px);
+  text-align: center;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    conic-gradient(from 200deg at 50% -30%,
+      transparent 0deg,
+      color-mix(in srgb, var(--accent-2) 26%, transparent) 70deg,
+      color-mix(in srgb, var(--accent-3) 22%, transparent) 130deg,
+      transparent 200deg);
+  opacity: 0.42;
+  filter: blur(56px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(560px, 80%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--line-3), transparent);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 15px 7px 11px;
+  border-radius: var(--r-pill);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: color-mix(in srgb, var(--text) 92%, var(--accent));
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.eyebrow svg { width: 15px; height: 15px; color: var(--accent-3); }
+
+.hero h1 {
+  margin: clamp(18px, 2.4vw, 26px) 0 0;
+  font-size: clamp(34px, 5.8vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-wrap: balance;
+}
+
+.hero h1 .thin {
+  display: block;
+  font-size: 0.44em;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  margin-top: 0.5em;
+  color: var(--muted);
+  -webkit-text-fill-color: var(--muted);
+}
+
+.hero p.lede {
+  margin: clamp(16px, 2.2vw, 22px) auto 0;
+  max-width: 640px;
+  color: var(--text-2);
+  font-size: clamp(14.5px, 1.5vw, 16.5px);
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: clamp(22px, 3vw, 30px);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.pill svg { width: 14px; height: 14px; color: var(--accent-3); }
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: clamp(26px, 3.4vw, 36px);
+  padding-top: clamp(22px, 3vw, 30px);
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- 7. Layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 264px minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: clamp(24px, 3.4vw, 40px);
+  align-items: start;
+}
+
+/* the rail must span the full row height, otherwise the sticky TOC has no travel */
+.layout > aside { align-self: stretch; }
+
+/* ---------- 8. TOC ---------- */
+.side-sticky {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  display: grid;
+  gap: 14px;
+}
+
+.toc {
+  position: static;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: linear-gradient(170deg, var(--panel-2), var(--panel));
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--shadow-md);
+  padding: 18px 14px;
+  max-height: calc(100dvh - var(--header-h) - 44px);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-2) transparent;
+}
+.toc::-webkit-scrollbar { width: 8px; }
+.toc::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 99px; }
+
+.toc-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.toc-head svg { width: 15px; height: 15px; color: var(--accent-3); }
+.toc-head span {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc-list { display: flex; flex-direction: column; gap: 2px; }
+
+.toc a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px 8px 12px;
+  border-radius: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13.5px;
+  line-height: 1.45;
+  transition: color 0.18s, background 0.18s;
+}
+.toc a::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  border-radius: 2px;
+  background: var(--grad-solid);
+  transform: translateY(-50%);
+  transition: height 0.24s var(--ease);
+}
+.toc a:hover { color: var(--text); background: var(--panel-2); }
+.toc a[aria-current="true"] {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  font-weight: 600;
+}
+.toc a[aria-current="true"]::before { height: 18px; }
+
+.toc-num {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 auto;
+}
+.toc a[aria-current="true"] .toc-num { color: var(--accent-3); }
+
+/* sidebar help card */
+.side-help {
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(120% 150% at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%),
+    linear-gradient(170deg, var(--panel-2), var(--panel));
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--shadow-md);
+  padding: 18px;
+}
+.side-help-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(150deg, #2aabee, #229ed9);
+  box-shadow: 0 10px 24px -12px rgba(42, 171, 238, 0.8);
+  margin-bottom: 12px;
+}
+.side-help-ico svg { width: 19px; height: 19px; }
+.side-help-title {
+  margin: 0 0 4px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+.side-help-text {
+  margin: 0 0 14px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.side-help .btn { width: 100%; min-height: 38px; font-size: 13.5px; }
+
+/* ---------- 9. Content cards ---------- */
+.content { display: grid; gap: clamp(14px, 1.8vw, 20px); min-width: 0; }
+
+.card {
+  position: relative;
+  scroll-margin-top: calc(var(--header-h) + 24px);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: linear-gradient(168deg, var(--panel-2), var(--panel));
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: var(--shadow-md);
+  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.8vw, 34px) clamp(22px, 2.8vw, 32px);
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 32%, transparent), transparent 42%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow), 0 30px 70px -40px rgba(0, 0, 0, 0.9);
+}
+.card:hover::before { opacity: 1; }
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.card-icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.card-icon svg { width: 20px; height: 20px; }
+
+.card h2 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.card-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  transform: translateY(-2px);
+}
+
+.card-anchor {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  color: var(--faint);
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s, background 0.2s, border-color 0.2s;
+  cursor: pointer;
+  background: none;
+}
+.card-anchor svg { width: 15px; height: 15px; }
+.card:hover .card-anchor,
+.card-anchor:focus-visible { opacity: 1; }
+.card-anchor:hover { color: var(--text); background: var(--panel-2); border-color: var(--line); }
+
+.card p {
+  margin: 0 0 12px;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 74ch;
+  text-wrap: pretty;
+}
+.card p:last-child { margin-bottom: 0; }
+
+.card ul {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  max-width: 74ch;
+}
+
+.card li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.85;
+}
+.card li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.78em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.card strong { color: var(--text); font-weight: 650; }
+
+/* variants */
+.card--notice {
+  border-color: color-mix(in srgb, var(--warn) 26%, transparent);
+  background:
+    radial-gradient(120% 160% at 0% 0%, color-mix(in srgb, var(--warn) 12%, transparent), transparent 55%),
+    linear-gradient(168deg, var(--panel-2), var(--panel));
+}
+.card--notice .card-icon {
+  color: var(--warn);
+  background: color-mix(in srgb, var(--warn) 13%, transparent);
+  border-color: color-mix(in srgb, var(--warn) 24%, transparent);
+}
+.card--notice li::before { background: var(--warn); box-shadow: 0 0 0 3px color-mix(in srgb, var(--warn) 16%, transparent); }
+
+.card--danger {
+  border-color: color-mix(in srgb, var(--danger) 28%, transparent);
+  background:
+    radial-gradient(120% 160% at 0% 0%, color-mix(in srgb, var(--danger) 13%, transparent), transparent 55%),
+    linear-gradient(168deg, var(--panel-2), var(--panel));
+}
+.card--danger .card-icon {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 13%, transparent);
+  border-color: color-mix(in srgb, var(--danger) 26%, transparent);
+}
+.card--danger li::before { background: var(--danger); box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 16%, transparent); }
+
+.callout {
+  margin-top: 16px;
+  padding: 13px 16px;
+  border-radius: var(--r-md);
+  border: 1px solid color-mix(in srgb, var(--danger) 30%, transparent);
+  background: color-mix(in srgb, var(--danger) 10%, transparent);
+  color: var(--text);
+  font-size: 14.5px;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.7;
+}
+.callout svg { width: 17px; height: 17px; flex: 0 0 auto; margin-top: 3px; color: var(--danger); }
+
+/* contact card */
+.contact-box {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line-2);
+  background:
+    radial-gradient(120% 180% at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+    var(--panel);
+}
+.contact-info { display: flex; align-items: center; gap: 13px; }
+.contact-ico {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(150deg, #2aabee, #229ed9);
+  box-shadow: 0 10px 26px -12px rgba(42, 171, 238, 0.85);
+  flex: 0 0 auto;
+}
+.contact-ico svg { width: 21px; height: 21px; }
+.contact-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.contact-value { font-size: 15.5px; font-weight: 650; color: var(--text); }
+
+/* ---------- 10. Footer ---------- */
+.footer {
+  margin-top: clamp(28px, 4vw, 48px);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: linear-gradient(170deg, var(--panel-2), var(--panel));
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  padding: clamp(26px, 3.6vw, 40px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-brand .brand-mark { width: 40px; height: 40px; border-radius: 13px; }
+.footer-brand .brand-mark svg { width: 22px; height: 22px; }
+.footer-title { font-size: 15.5px; font-weight: 700; letter-spacing: 0.06em; }
+.footer-note { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- 11. Back to top ---------- */
+.backtop {
+  position: fixed;
+  right: clamp(14px, 2.4vw, 28px);
+  bottom: clamp(14px, 2.4vw, 28px);
+  z-index: 45;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(14px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), border-color 0.2s;
+  box-shadow: var(--shadow-md);
+}
+.backtop.show { opacity: 1; transform: none; pointer-events: auto; }
+.backtop:hover { border-color: var(--line-3); }
+.backtop svg { width: 18px; height: 18px; }
+
+/* ---------- 12. Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  z-index: 60;
+  transform: translate(-50%, 24px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  color: var(--text);
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  transition: opacity 0.24s var(--ease), transform 0.24s var(--ease);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast svg { width: 15px; height: 15px; color: var(--ok); }
+
+/* ---------- 13. theme icon swap ---------- */
+.icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+[data-theme="dark"] .icon-btn { color: var(--muted); }
+
+/* ---------- 14. Responsive ---------- */
+@media (max-width: 1080px) {
+  .layout { grid-template-columns: 228px minmax(0, 1fr); }
+  .header-nav a { padding: 8px 10px; font-size: 13.5px; }
+}
+
+@media (max-width: 900px) {
+  :root { --header-h: 62px; }
+
+  .header-nav { display: none; }
+  .header-nav + .header-actions { margin-left: auto; }
+
+  .side-sticky { position: static; display: contents; }
+  .side-help { display: none; }
+
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+
+  .toc {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 30;
+    margin-inline: calc(50% - 50vw);
+    padding: 10px 20px 10px 16px;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    backdrop-filter: blur(18px) saturate(150%);
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 34px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 34px), transparent 100%);
+  }
+  .toc::-webkit-scrollbar { display: none; }
+  .toc-head { display: none; }
+  .toc-list { flex-direction: row; gap: 6px; }
+  .toc a {
+    white-space: nowrap;
+    border: 1px solid var(--line);
+    border-radius: var(--r-pill);
+    padding: 7px 13px;
+    font-size: 13px;
+    background: var(--panel);
+  }
+  .toc a::before { display: none; }
+  .toc a[aria-current="true"] {
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    color: var(--text);
+  }
+  .toc-num { display: none; }
+
+  .card-anchor { opacity: 1; }
+  .footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 620px) {
+  .page { width: calc(100% - 28px); }
+  .header-inner { width: calc(100% - 28px); }
+  .brand-sub { display: none; }
+  .btn .btn-label { display: none; }
+  .btn { padding: 0 13px; min-height: 38px; }
+  .icon-btn { width: 36px; height: 36px; }
+
+  .hero {
+    border-radius: 22px;
+    padding: 30px 18px 24px;
+  }
+  .hero h1 { margin-top: 16px; letter-spacing: -0.028em; }
+  .hero h1 .thin { margin-top: 0.62em; font-size: 0.42em; }
+  .eyebrow { font-size: 11px; padding: 6px 12px 6px 9px; letter-spacing: 0.1em; }
+  .hero p.lede { margin-top: 14px; font-size: 14px; line-height: 1.85; }
+  .meta { margin-top: 18px; gap: 8px; }
+  .hero-cta { margin-top: 20px; padding-top: 18px; }
+  .hero-cta .btn { flex: 1 1 auto; }
+  .meta .pill { font-size: 12px; padding: 6px 11px; gap: 6px; }
+  .meta .pill svg { width: 13px; height: 13px; }
+  .card { border-radius: 18px; }
+  .card-head { gap: 11px; }
+  .card-icon { width: 36px; height: 36px; border-radius: 11px; }
+  .card-icon svg { width: 18px; height: 18px; }
+  .contact-box { flex-direction: column; align-items: stretch; }
+  .contact-box .btn { width: 100%; }
+  .backtop { width: 42px; height: 42px; }
+}
+
+@media (max-width: 380px) {
+  .brand-name { letter-spacing: 0.08em; font-size: 14px; }
+  .header-actions { gap: 6px; }
+}
+
+/* ---------- 15. Motion & print ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media print {
+  .aura, .grain, .grid-lines, .site-header, .toc, .backtop, .toast, .hero-cta { display: none !important; }
+  body { background: #fff; color: #111; }
+  .card, .hero, .footer { border: 1px solid #ddd; background: #fff; box-shadow: none; }
+  .card h2, .hero h1 { color: #111; -webkit-text-fill-color: #111; background: none; }
+  .card p, .card li { color: #222; }
+  .layout { display: block; }
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <div class="badge">📜 Terms of Service</div>
-      <h1>BeckyNetwork 服務條款</h1>
-      <p class="subtitle">在使用 BeckyNetwork 服務前，請仔細閱讀以下條款。繼續註冊、購買、訂閱或使用服務，即表示你已閱讀、理解並同意遵守本服務條款。</p>
-      <div class="meta">
-        <span class="pill">適用於所有用戶</span>
-        <span class="pill">訂閱服務規則</span>
-        <span class="pill">安全與合規說明</span>
-      </div>
-    </header>
 
-    <div class="layout">
-      <nav class="toc" aria-label="目錄">
-        <p class="toc-title">快速導航</p>
-        <a href="#acceptance">1. 條款接受</a>
-        <a href="#service">2. 服務說明</a>
-        <a href="#account">3. 帳戶與訂閱</a>
-        <a href="#traffic">4. 流量與使用</a>
-        <a href="#prohibited">5. 禁止行為</a>
-        <a href="#refund">6. 退款政策</a>
-        <a href="#privacy">7. 隱私與資料</a>
-        <a href="#risk">8. 風險聲明</a>
-        <a href="#changes">9. 條款變更</a>
-        <a href="#contact">10. 聯絡方式</a>
-      </nav>
+<!-- icon sprite -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.2 2.5 2.4 4.7-4.9"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.6 20.4c.9-3.6 3.9-5.7 7.4-5.7s6.5 2.1 7.4 5.7"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16"/><rect x="5" y="12" width="3.2" height="5" rx="1.1"/><rect x="10.4" y="8" width="3.2" height="9" rx="1.1"/><rect x="15.8" y="4.5" width="3.2" height="12.5" rx="1.1"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m6 18 12-12"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.6"/><path d="M3 10.2h18"/><path d="M7 14.8h4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.6" y="10.4" width="14.8" height="9.6" rx="2.6"/><path d="M8.2 10.4V8a3.8 3.8 0 0 1 7.6 0v2.4"/><path d="M12 14.3v2.1"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M10.6 4.1a1.6 1.6 0 0 1 2.8 0l7.3 13.4a1.6 1.6 0 0 1-1.4 2.4H4.7a1.6 1.6 0 0 1-1.4-2.4z"/><path d="M12 9.4v4.2"/><path d="M12 16.6h.01"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20.2 12a8.2 8.2 0 1 1-2.5-5.9"/><path d="M20.2 4.4v5.6h-5.6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.4" width="18" height="13.2" rx="2.6"/><path d="m4.6 8.2 6.3 4.5a2 2 0 0 0 2.2 0l6.3-4.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.2 19 6v5.4c0 4.3-2.9 7.7-7 9.5-4.1-1.8-7-5.2-7-9.5V6z"/><path d="m9 12.1 2.2 2.2 4.1-4.3"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5.4"/><path d="m5.8 11.4 6.2-6 6.2 6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4.8 12h13.4"/><path d="m12.4 5.6 6.4 6.4-6.4 6.4"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21.2 4.3 2.9 11.1c-.9.3-.9 1.5.1 1.7l4.5 1.2 1.7 5.1c.2.7 1.1.9 1.6.3l2.4-2.4 4.3 3.1c.6.4 1.4.1 1.6-.6l3-13.2c.2-.8-.5-1.4-1.3-1.1z"/><path d="m7.6 14 9.4-6.3-6.8 7.4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6 6 18M18 6l1.6-1.6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.2 14.3A8.4 8.4 0 0 1 9.7 3.8a8.6 8.6 0 1 0 10.5 10.5z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M9.6 14.4 14.4 9.6"/><path d="M11.9 7.3l1.4-1.4a3.6 3.6 0 0 1 5.1 5.1l-1.4 1.4"/><path d="M12.1 16.7l-1.4 1.4a3.6 3.6 0 0 1-5.1-5.1l1.4-1.4"/></symbol>
+  </defs>
+</svg>
 
-      <section class="content">
-        <article class="section notice" id="acceptance">
-          <h2>✅ 1. 條款接受</h2>
-          <p>當你訪問、註冊、購買或使用 BeckyNetwork 提供的任何服務時，即視為你已同意本服務條款以及後續可能更新的相關規則。</p>
-          <p>如果你不同意本條款中的任何內容，請立即停止使用本服務。</p>
-        </article>
+<div class="aura" aria-hidden="true"><span></span></div>
+<div class="grid-lines" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
-        <article class="section" id="service">
-          <h2>🌐 2. 服務說明</h2>
-          <p>BeckyNetwork 提供網路連線最佳化、節點訂閱、串流媒體訪問輔助及相關技術服務。服務內容可能根據線路狀態、地區網路環境、第三方平台策略或維護安排進行調整。</p>
-          <p>我們會盡力保障服務穩定性，但不承諾任何節點、地區、平台或速度在任何時間均可用。</p>
-        </article>
+<a class="skip-link" href="#content">跳至條款內容</a>
 
-        <article class="section" id="account">
-          <h2>👤 3. 帳戶與訂閱</h2>
-          <ul>
-            <li>用戶應妥善保管帳戶、密碼、訂閱連結及相關登入資訊。</li>
-            <li>禁止將帳戶或訂閱連結公開發布、轉售、共享給大量非本人用戶使用。</li>
-            <li>因用戶自身洩露帳戶或訂閱資訊導致的損失，由用戶自行承擔。</li>
-            <li>系統檢測到異常登入、異常並發或濫用行為時，BeckyNetwork 有權限制、暫停或終止服務。</li>
-          </ul>
-        </article>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Ueolynetwork 服務條款首頁">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6.6 4.8v6.1a5.4 5.4 0 0 0 10.8 0V4.8" />
+          <path d="M12 16.5v2.9" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Ueolynetwork</span>
+        <span class="brand-sub">Terms of Service</span>
+      </span>
+    </a>
 
-        <article class="section" id="traffic">
-          <h2>📊 4. 流量與使用规则</h2>
-          <ul>
-            <li>套餐流量以用戶購買頁面顯示為準，流量用盡後服務可能暫停或降速。</li>
-            <li>套餐週期、重置時間、線上裝置數量等規則以具體套餐說明為準。</li>
-            <li>節點速率會受到用戶本地網路、國際出口、線路壅塞、裝置效能等因素影響。</li>
-            <li>BeckyNetwork 有權對異常高佔用、影響其他用戶體驗的連線進行限制。</li>
-          </ul>
-        </article>
+    <nav class="header-nav" aria-label="主要導覽">
+      <a href="#acceptance">條款接受</a>
+      <a href="#prohibited">禁止行為</a>
+      <a href="#refund">退款政策</a>
+      <a href="#privacy">隱私</a>
+      <a href="#contact">聯絡</a>
+    </nav>
 
-        <article class="section danger" id="prohibited">
-          <h2>⛔ 5. 禁止行為</h2>
-          <p>用戶不得使用 BeckyNetwork 服務從事任何違法、違規、惡意或影響平台穩定性的行為，包括但不限於：</p>
-          <ul>
-            <li>DDoS、CC 攻擊、連接埠掃描、暴力破解、惡意爬蟲等網路攻擊行為。</li>
-            <li>垃圾郵件、垃圾註冊、批量帳號註冊、詐欺、釣魚或傳播惡意軟體。</li>
-            <li>傳播違法內容、侵權內容、仇恨內容、暴力恐怖內容或其他違規資訊。</li>
-            <li>濫用節點資源、長期滿速佔用、共享訂閱連結或轉售服務。</li>
-            <li>任何違反當地法律法規、服務所在地區規則或第三方平台條款的行為。</li>
-          </ul>
-          <p><strong>一經發現，BeckyNetwork 有權立即限制、暫停或終止帳戶服務。</strong></p>
-        </article>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="切換為淺色模式" aria-pressed="false">
+        <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sun"/></svg>
+        <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn-primary" href="https://t.me/UeolySupport?direct" target="_blank" rel="noopener noreferrer">
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-telegram"/></svg>
+        <span class="btn-label">聯絡客服</span>
+      </a>
+    </div>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
 
-        <article class="section" id="refund">
-          <h2>💳 6. 付款與退款政策</h2>
-          <ul>
-            <li>用戶購買前應仔細確認套餐內容、週期、流量及適用範圍。</li>
-            <li>虛擬訂閱服務一經開通並交付，不支援退款。</li>
-            <li>如因 BeckyNetwork 長時間無法提供服務，可於後台發送工單處理。</li>
-            <li>因用戶本地網路環境、裝置配置、客戶端設定或第三方平台封鎖導致的問題，不作為退款依據。</li>
-          </ul>
-        </article>
+<main class="page" id="top">
 
-        <article class="section" id="privacy">
-          <h2>🔒 7. 隱私與資料保護</h2>
-          <p>BeckyNetwork 尊重用戶隱私。我們僅在提供服務、保障安全、防止濫用及處理售後時收集必要資訊。</p>
-          <p>我們不會主動出售用戶個人資訊。為維護系統安全，平台可能記錄必要的帳戶狀態、流量使用、連線異常及支付狀態等資訊。</p>
-        </article>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <span class="eyebrow">
+      <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg>
+      Terms of Service
+    </span>
 
-        <article class="section" id="risk">
-          <h2>⚠️ 8. 風險聲明</h2>
-          <p>網路連線品質可能受到政策環境、營運商線路、第三方平台限制、國際網路波動等不可控因素影響。BeckyNetwork 不保證所有地區、所有時間、所有平台均可正常訪問。</p>
-          <p>用戶應自行了解並遵守所在地相關法律法規，因用戶使用行為產生的責任由用戶自行承擔。</p>
-        </article>
+    <h1>
+      Ueolynetwork
+      <span class="thin">服務條款 · Terms of Service</span>
+    </h1>
 
-        <article class="section" id="changes">
-          <h2>🔄 9. 條款變更</h2>
-          <p>BeckyNetwork 有權根據業務調整、法律法規變化或安全策略更新本服務條款。更新後的條款將在網站或用戶面板中公布。</p>
-          <p>條款更新後繼續使用服務，即視為用戶接受更新後的條款。</p>
-        </article>
+    <p class="lede">
+      在使用 Ueolynetwork 服務前，請仔細閱讀以下條款。繼續註冊、購買、訂閱或使用服務，即表示你已閱讀、理解並同意遵守本服務條款。
+    </p>
 
-        <article class="section" id="contact">
-          <h2>📮 10. 聯絡方式</h2>
-          <p>如你對本服務條款、帳戶狀態、套餐使用或售後處理有任何疑問，請透過 BeckyNetwork 官方客服渠道聯絡我們。</p>
-          <p><span class="highlight">客服：<a href="https://t.me/BeckyContact?direct" target="_blank" rel="noopener noreferrer">BeckyNetwork</a></span></p>
-        </article>
-      </section>
+    <div class="meta">
+      <span class="pill">
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-user"/></svg>
+        適用於所有用戶
+      </span>
+      <span class="pill">
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-doc"/></svg>
+        訂閱服務規則
+      </span>
+      <span class="pill">
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg>
+        安全與合規說明
+      </span>
+      <span class="pill">
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>
+        共 10 個章節
+      </span>
     </div>
 
-    <footer class="footer">
-      <b>BeckyNetwork Terms of Service</b>
-    </footer>
-  </main>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://t.me/UeolySupport?direct" target="_blank" rel="noopener noreferrer">
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-telegram"/></svg>
+        聯絡客服
+      </a>
+      <a class="btn btn-ghost" href="#acceptance">
+        開始閱讀
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= LAYOUT ================= -->
+  <div class="layout">
+
+    <aside>
+      <div class="side-sticky">
+      <nav class="toc" aria-label="條款目錄">
+        <div class="toc-head">
+          <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-doc"/></svg>
+          <span>快速導航</span>
+        </div>
+        <div class="toc-list">
+          <a href="#acceptance"><span class="toc-num">01</span><span>條款接受</span></a>
+          <a href="#service"><span class="toc-num">02</span><span>服務說明</span></a>
+          <a href="#account"><span class="toc-num">03</span><span>帳戶與訂閱</span></a>
+          <a href="#traffic"><span class="toc-num">04</span><span>流量與使用規則</span></a>
+          <a href="#prohibited"><span class="toc-num">05</span><span>禁止行為</span></a>
+          <a href="#refund"><span class="toc-num">06</span><span>付款與退款政策</span></a>
+          <a href="#privacy"><span class="toc-num">07</span><span>隱私與資料保護</span></a>
+          <a href="#risk"><span class="toc-num">08</span><span>風險聲明</span></a>
+          <a href="#changes"><span class="toc-num">09</span><span>條款變更</span></a>
+          <a href="#contact"><span class="toc-num">10</span><span>聯絡方式</span></a>
+        </div>
+      </nav>
+
+      <div class="side-help">
+        <span class="side-help-ico" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-telegram"/></svg>
+        </span>
+        <p class="side-help-title">需要協助？</p>
+        <p class="side-help-text">帳戶、套餐或退款問題，直接找官方客服處理。</p>
+        <a class="btn btn-primary" href="https://t.me/UeolySupport?direct" target="_blank" rel="noopener noreferrer">聯絡客服</a>
+      </div>
+      </div>
+    </aside>
+
+    <section class="content" id="content">
+
+      <!-- 01 -->
+      <article class="card card--notice" id="acceptance">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>
+          <h2><span class="card-num">01</span>條款接受</h2>
+          <button class="card-anchor" type="button" data-hash="#acceptance" aria-label="複製「條款接受」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <p>當你訪問、註冊、購買或使用 Ueolynetwork 提供的任何服務時，即視為你已同意本服務條款以及後續可能更新的相關規則。</p>
+        <p>如果你不同意本條款中的任何內容，請立即停止使用本服務。</p>
+      </article>
+
+      <!-- 02 -->
+      <article class="card" id="service">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-globe"/></svg></span>
+          <h2><span class="card-num">02</span>服務說明</h2>
+          <button class="card-anchor" type="button" data-hash="#service" aria-label="複製「服務說明」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <p>Ueolynetwork 提供網路連線最佳化、節點訂閱、串流媒體訪問輔助及相關技術服務。服務內容可能根據線路狀態、地區網路環境、第三方平台策略或維護安排進行調整。</p>
+        <p>我們會盡力保障服務穩定性，但不承諾任何節點、地區、平台或速度在任何時間均可用。</p>
+      </article>
+
+      <!-- 03 -->
+      <article class="card" id="account">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-user"/></svg></span>
+          <h2><span class="card-num">03</span>帳戶與訂閱</h2>
+          <button class="card-anchor" type="button" data-hash="#account" aria-label="複製「帳戶與訂閱」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <ul>
+          <li>用戶應妥善保管帳戶、密碼、訂閱連結及相關登入資訊。</li>
+          <li>禁止將帳戶或訂閱連結公開發布、轉售、共享給大量非本人用戶使用。</li>
+          <li>因用戶自身洩露帳戶或訂閱資訊導致的損失，由用戶自行承擔。</li>
+          <li>系統檢測到異常登入、異常並發或濫用行為時，Ueolynetwork 有權限制、暫停或終止服務。</li>
+        </ul>
+      </article>
+
+      <!-- 04 -->
+      <article class="card" id="traffic">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chart"/></svg></span>
+          <h2><span class="card-num">04</span>流量與使用規則</h2>
+          <button class="card-anchor" type="button" data-hash="#traffic" aria-label="複製「流量與使用規則」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <ul>
+          <li>套餐流量以用戶購買頁面顯示為準，流量用盡後服務可能暫停或降速。</li>
+          <li>套餐週期、重置時間、線上裝置數量等規則以具體套餐說明為準。</li>
+          <li>節點速率會受到用戶本地網路、國際出口、線路壅塞、裝置效能等因素影響。</li>
+          <li>Ueolynetwork 有權對異常高佔用、影響其他用戶體驗的連線進行限制。</li>
+        </ul>
+      </article>
+
+      <!-- 05 -->
+      <article class="card card--danger" id="prohibited">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ban"/></svg></span>
+          <h2><span class="card-num">05</span>禁止行為</h2>
+          <button class="card-anchor" type="button" data-hash="#prohibited" aria-label="複製「禁止行為」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <p>用戶不得使用 Ueolynetwork 服務從事任何違法、違規、惡意或影響平台穩定性的行為，包括但不限於：</p>
+        <ul>
+          <li>DDoS、CC 攻擊、連接埠掃描、暴力破解、惡意爬蟲等網路攻擊行為。</li>
+          <li>垃圾郵件、垃圾註冊、批量帳號註冊、詐欺、釣魚或傳播惡意軟體。</li>
+          <li>傳播違法內容、侵權內容、仇恨內容、暴力恐怖內容或其他違規資訊。</li>
+          <li>濫用節點資源、長期滿速佔用、共享訂閱連結或轉售服務。</li>
+          <li>任何違反當地法律法規、服務所在地區規則或第三方平台條款的行為。</li>
+        </ul>
+        <div class="callout">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-warn"/></svg>
+          <span>一經發現，Ueolynetwork 有權立即限制、暫停或終止帳戶服務。</span>
+        </div>
+      </article>
+
+      <!-- 06 -->
+      <article class="card" id="refund">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-card"/></svg></span>
+          <h2><span class="card-num">06</span>付款與退款政策</h2>
+          <button class="card-anchor" type="button" data-hash="#refund" aria-label="複製「付款與退款政策」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <ul>
+          <li>用戶購買前應仔細確認套餐內容、週期、流量及適用範圍。</li>
+          <li>虛擬訂閱服務一經開通並交付，不支援退款。</li>
+          <li>如因 Ueolynetwork 長時間無法提供服務，可於後台發送工單處理。</li>
+          <li>因用戶本地網路環境、裝置配置、客戶端設定或第三方平台封鎖導致的問題，不作為退款依據。</li>
+        </ul>
+      </article>
+
+      <!-- 07 -->
+      <article class="card" id="privacy">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-lock"/></svg></span>
+          <h2><span class="card-num">07</span>隱私與資料保護</h2>
+          <button class="card-anchor" type="button" data-hash="#privacy" aria-label="複製「隱私與資料保護」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <p>Ueolynetwork 尊重用戶隱私。我們僅在提供服務、保障安全、防止濫用及處理售後時收集必要資訊。</p>
+        <p>我們不會主動出售用戶個人資訊。為維護系統安全，平台可能記錄必要的帳戶狀態、流量使用、連線異常及支付狀態等資訊。</p>
+      </article>
+
+      <!-- 08 -->
+      <article class="card" id="risk">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-warn"/></svg></span>
+          <h2><span class="card-num">08</span>風險聲明</h2>
+          <button class="card-anchor" type="button" data-hash="#risk" aria-label="複製「風險聲明」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <p>網路連線品質可能受到政策環境、營運商線路、第三方平台限制、國際網路波動等不可控因素影響。Ueolynetwork 不保證所有地區、所有時間、所有平台均可正常訪問。</p>
+        <p>用戶應自行了解並遵守所在地相關法律法規，因用戶使用行為產生的責任由用戶自行承擔。</p>
+      </article>
+
+      <!-- 09 -->
+      <article class="card" id="changes">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-refresh"/></svg></span>
+          <h2><span class="card-num">09</span>條款變更</h2>
+          <button class="card-anchor" type="button" data-hash="#changes" aria-label="複製「條款變更」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <p>Ueolynetwork 有權根據業務調整、法律法規變化或安全策略更新本服務條款。更新後的條款將在網站或用戶面板中公布。</p>
+        <p>條款更新後繼續使用服務，即視為用戶接受更新後的條款。</p>
+      </article>
+
+      <!-- 10 -->
+      <article class="card" id="contact">
+        <div class="card-head">
+          <span class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg></span>
+          <h2><span class="card-num">10</span>聯絡方式</h2>
+          <button class="card-anchor" type="button" data-hash="#contact" aria-label="複製「聯絡方式」本節連結">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-link"/></svg>
+          </button>
+        </div>
+        <p>如你對本服務條款、帳戶狀態、套餐使用或售後處理有任何疑問，請透過 Ueolynetwork 官方客服渠道聯絡我們。</p>
+        <div class="contact-box">
+          <div class="contact-info">
+            <span class="contact-ico" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-telegram"/></svg>
+            </span>
+            <span>
+              <span class="contact-label">官方客服</span>
+              <span class="contact-value">UeolySupport</span>
+            </span>
+          </div>
+          <a class="btn btn-primary" href="https://t.me/UeolySupport?direct" target="_blank" rel="noopener noreferrer">
+            <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-telegram"/></svg>
+            前往 Telegram 客服
+          </a>
+        </div>
+      </article>
+
+    </section>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6.6 4.8v6.1a5.4 5.4 0 0 0 10.8 0V4.8" />
+          <path d="M12 16.5v2.9" />
+        </svg>
+      </span>
+      <span>
+        <span class="footer-title">Ueolynetwork Terms of Service</span>
+        <span class="footer-note">© Ueolynetwork · 保留所有權利</span>
+      </span>
+    </div>
+    <div class="footer-links">
+      <a class="btn btn-ghost" href="#top">回到頂部</a>
+      <a class="btn btn-primary" href="https://t.me/UeolySupport?direct" target="_blank" rel="noopener noreferrer">
+        <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#i-telegram"/></svg>
+        聯絡客服
+      </a>
+    </div>
+  </footer>
+</main>
+
+<button class="backtop" type="button" aria-label="回到頂部">
+  <svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow-up"/></svg>
+</button>
+
+<div class="toast" role="status" aria-live="polite">
+  <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>
+  <span data-toast-text>已複製本節連結</span>
+</div>
+
+<script>
+/* Ueolynetwork — Terms of Service
+ * Behaviour: theme, scroll progress, scroll-spy TOC, anchor copy, back-to-top, reveal.
+ */
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var header = document.querySelector(".site-header");
+  var progress = document.querySelector(".progress");
+  var backtop = document.querySelector(".backtop");
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll(".toc a[href^='#']"));
+  var sections = tocLinks
+    .map(function (a) { return document.querySelector(a.getAttribute("href")); })
+    .filter(Boolean);
+
+  /* ---------- theme ---------- */
+  var THEME_KEY = "ueoly-tos-theme";
+  var media = window.matchMedia("(prefers-color-scheme: light)");
+
+  function paintTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme === "light" ? "#f2f5fb" : "#05070e");
+    var btn = document.querySelector("[data-theme-toggle]");
+    if (btn) {
+      btn.setAttribute("aria-label", theme === "light" ? "切換為深色模式" : "切換為淺色模式");
+      btn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+    }
+  }
+
+  function storedTheme() {
+    try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
+  }
+
+  function queryTheme() {
+    try {
+      var t = new URLSearchParams(location.search).get("theme");
+      return t === "light" || t === "dark" ? t : null;
+    } catch (e) { return null; }
+  }
+
+  paintTheme(queryTheme() || storedTheme() || "dark");
+
+  document.addEventListener("click", function (e) {
+    var toggle = e.target.closest("[data-theme-toggle]");
+    if (!toggle) return;
+    var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    paintTheme(next);
+    try { localStorage.setItem(THEME_KEY, next); } catch (err) {}
+  });
+
+  if (media.addEventListener) {
+    media.addEventListener("change", function (e) {
+      if (!storedTheme()) paintTheme(e.matches ? "light" : "dark");
+    });
+  }
+
+  /* ---------- scroll progress + header state + back to top ---------- */
+  var ticking = false;
+
+  function onScrollFrame() {
+    ticking = false;
+    var y = window.scrollY || window.pageYOffset;
+    var doc = document.documentElement;
+    var max = (doc.scrollHeight - window.innerHeight) || 1;
+    var ratio = Math.min(1, Math.max(0, y / max));
+
+    if (progress) progress.style.setProperty("--p", ratio.toFixed(4));
+    if (header) header.classList.toggle("is-stuck", y > 8);
+    if (backtop) backtop.classList.toggle("show", y > 640);
+  }
+
+  function requestScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(onScrollFrame);
+  }
+
+  window.addEventListener("scroll", requestScroll, { passive: true });
+  window.addEventListener("resize", requestScroll, { passive: true });
+  onScrollFrame();
+
+  if (backtop) {
+    backtop.addEventListener("click", function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
+  }
+
+  /* ---------- scroll-spy ---------- */
+  function setActive(id) {
+    tocLinks.forEach(function (a) {
+      var on = a.getAttribute("href") === "#" + id;
+      if (on) {
+        a.setAttribute("aria-current", "true");
+        if (a.parentElement && a.parentElement.scrollIntoView && window.innerWidth <= 900) {
+          var box = a.parentElement.parentElement;
+          if (box && box.scrollWidth > box.clientWidth) {
+            box.scrollTo({
+              left: a.offsetLeft - box.clientWidth / 2 + a.offsetWidth / 2,
+              behavior: "smooth"
+            });
+          }
+        }
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  if ("IntersectionObserver" in window && sections.length) {
+    var visible = new Set();
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) visible.add(en.target.id);
+          else visible.delete(en.target.id);
+        });
+
+        var current = null;
+        for (var i = 0; i < sections.length; i++) {
+          if (visible.has(sections[i].id)) { current = sections[i].id; break; }
+        }
+        if (!current) {
+          // fall back to the last section whose top passed the header line
+          var line = window.scrollY + parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h") || 68) + 40;
+          for (var j = 0; j < sections.length; j++) {
+            if (sections[j].offsetTop <= line) current = sections[j].id;
+          }
+        }
+        // bottom of page => last section
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+          current = sections[sections.length - 1].id;
+        }
+        if (current) setActive(current);
+      },
+      { rootMargin: "-38% 0px -52% 0px", threshold: [0, 0.01, 0.2] }
+    );
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  /* ---------- anchor copy ---------- */
+  var toast = document.querySelector(".toast");
+  var toastTimer = null;
+
+  function showToast(msg) {
+    if (!toast) return;
+    var label = toast.querySelector("[data-toast-text]");
+    if (label) label.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 1900);
+  }
+
+  document.addEventListener("click", function (e) {
+    var anchor = e.target.closest(".card-anchor");
+    if (!anchor) return;
+    e.preventDefault();
+    var hash = anchor.getAttribute("data-hash") || anchor.getAttribute("href");
+    var url = location.origin + location.pathname + hash;
+    var done = function () { showToast("已複製本節連結"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done).catch(function () {
+        history.replaceState(null, "", hash);
+        showToast("已定位到本節");
+      });
+    } else {
+      history.replaceState(null, "", hash);
+      showToast("已定位到本節");
+    }
+  });
+
+  })();
+</script>
 </body>
 </html>
